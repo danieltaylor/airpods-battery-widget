@@ -21,9 +21,9 @@ MAC_ADDRESS = "00-00-00-00-00-00"
 	# Option 1: While holding the option key, click on the bluetooth icon in the menu bar.  Mouse over your airpods in the devices list and the address will be displayed.
 	# Option 2: Run "system_profiler SPBluetoothDataType" from the terminal and locate the address listed under your airpods.
 
-SHOW_LAST_KNOWN_PERCENTAGES = false
-# Set true to display the last known battery percentages even when airpods are disconnected.
-# This will be overridden to true if a MAC address is not set.
+HIDE_ON_DISCONNECT = true
+# Set true to hide the widget when airpods are disconnected.  If false, the last known battery percentages will be displayed.
+# This will be overridden to false if a MAC address is not set.
 
 SHOW_LAST_CASE_PERCENTAGE = true
 # Even if airpods are connected, macOS will stop tracking the battery percentage of the case when not charging or open with airpods inside.  Set true to always display the last known case percentage (when available).
@@ -71,21 +71,19 @@ update: (output, domEl) ->
 	case_percent =  ' ' + output.split('\n')[2] + '%'
 	connected = output.split('\n')[3]
 
-	if connected == '1' or MAC_ADDRESS == "00-00-00-00-00-00" or SHOW_LAST_KNOWN_PERCENTAGES
-		$(domEl).find(".airpods_widget").show()
+	if connected == '1' or MAC_ADDRESS == "00-00-00-00-00-00" or !HIDE_ON_DISCONNECT
+		$(domEl).find("#airpods_widget").show()
 		$(domEl).find(".left_airpod_text").text("#{left_percent}")
 		$(domEl).find(".right_airpod_text").text("#{right_percent}")
-
 		if case_percent != " 0%"
 			$(domEl).find(".case_text").text("#{case_percent}")
 		else if $(domEl).find(".case_text").text() == "" or !SHOW_LAST_CASE_PERCENTAGE
 			$(domEl).find(".case_text").hide()
 			$(domEl).find("#case_image").hide()
 			$(domEl).find("#case_br").hide()
-
 		if ICON_LOCATION == "left"
 			$(domEl).find(".left_of_icon").hide()
 		else
 			$(domEl).find(".right_of_icon").hide()
 	else
-		$(domEl).find(".airpods_widget").hide()
+		$(domEl).find("#airpods_widget").hide()
