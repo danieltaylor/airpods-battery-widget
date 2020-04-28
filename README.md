@@ -9,8 +9,8 @@ Desktop widget for displaying AirPods battery percentages in macOS using the [Ü
 - option to autohide when AirPods are disconnected
 - various style settings
 
-<img style="height:150px; margin:2px" src="./screenshots/solid-white-right.png"><img style="height:150px; margin:2px" src="./screenshots/solid-black-left.png"><br>
-<img style="height:150px; margin:2px" src="./screenshots/line-black-right.png"><img style="height:150px; margin:2px" src="./screenshots/line-white-left.png">
+<img height="150px" src="./screenshots/solid-white-right.png"> <img height="150px" src="./screenshots/solid-black-left.png"><br>
+<img height="150px" src="./screenshots/line-black-right.png"> <img height="150px" src="./screenshots/line-white-left.png">
 
 ## Installation & Setup
 
@@ -29,4 +29,4 @@ Icons based on Vincent Le Moign's [iPhone 7 & AirPods Icons](https://www.iconfin
 Screenshot background images by [Nick Cooper](https://unsplash.com/photos/_1UF_3TlKcQ) and [Ivan Bandura](https://unsplash.com/photos/jy4F2C1qksc).
 
 ---
-<center><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact@danieltaylor.tk&lc=US&item_name=AirPods+Battery+Widget&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">Donate</a></center>
+<p align=center><a text-align="center" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact@danieltaylor.tk&lc=US&item_name=AirPods+Battery+Widget&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">Donate</a></p>
